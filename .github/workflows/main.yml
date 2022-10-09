@@ -1,0 +1,37 @@
+# .github/workflows/deploy.yml
+name: Deploy Fluckbook-fontend to Google Cloud Run
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploying Cloud Run
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'deploy to ')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Build and push image to Google Container Registry
+      - name: Setting up
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          version: '286.0.0'
+          service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
+          service_account_email: "github-action@modular-magpie-348711.iam.gserviceaccount.com"
+          project_id: modular-magpie-348711
+
+      - name: Building
+        run: |-
+          gcloud builds submit --tag gcr.io/modular-magpie-348711/fluckbook-fontend2
+
+      # Setup gcloud CLI
+      - name: Deploy
+        uses: google-github-actions/deploy-cloudrun@main
+        with:
+          service: fluckbook-fontend2
+          image: gcr.io/modular-magpie-348711/fluckbook-fontend2
+          region: us-central1
+          credentials: ${{ secrets.GCP_SA_KEY_JSON }}
+          project_id: modular-magpie-348711

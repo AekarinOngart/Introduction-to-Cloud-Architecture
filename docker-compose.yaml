@@ -1,0 +1,10 @@
+version: '2.0'
+services: 
+    web:
+        image: nginx:1.13.0-alpine
+        container_name: wrk-nginx
+        restart: always
+        ports: 
+        - "9001:80"
+        volumes: 
+        - ./:/usr/share/nginx/html

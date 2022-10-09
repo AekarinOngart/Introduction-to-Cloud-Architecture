@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-sec {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.post-sec .post-header {
+    display: flex;
+}
+
+.post-sec .post-header .user-image img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #2f3640;
+    padding: 2px;
+}
+
+.post-sec .post-header .user-name {
+    padding-left: 20px;
+}
+
+.post-sec .post-header .user-name h2 {
+    color: #2f3640;
+    font-size: 20px;
+}
+
+.post-sec .post-header .user-name p {
+    color: gray;
+    font-size: 15px;
+    padding: 5px 0px;
+}
+
+.post-sec .post-area .post-input {
+    color: #2f3640;
+    height: 200px;
+    width: 100%;
+    resize: none;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    margin: 20px auto 10px auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+}
+
+.post-sec .post-area .post-input::placeholder {
+    color: gray;
+}
+
+.post-sec .post-area .text-limit-set {
+    display: flex;
+    margin: 0px auto 20px auto;
+}
+
+.post-sec .post-area .text-limit-set p:first-child {
+    padding-right: 5px;
+    color: #2f3640;
+    font-size: 13px;
+}
+
+.post-sec .post-area .text-limit-set p:last-child {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1d9bf0;
+}
+
+.post-sec .post-area .post-footer {
+    display: flex;
+    width: 100%;
+}
+
+.post-sec .post-area .post-footer div {
+    flex: 1;
+}
+
+.post-sec .post-area .post-footer div:first-child ul {
+    list-style: none;
+    display: flex;
+}
+
+.post-sec .post-area .post-footer div:first-child ul li:nth-last-child(2) {
+    padding: 0px 20px;
+}
+
+.post-sec .post-area .post-footer div:first-child ul li a {
+    text-decoration: none;
+    color: #1d9bf0;
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+
+.post-sec .post-area .post-footer div:first-child ul li a:hover {
+    color: #1d9cf0da;
+}
+
+.post-sec .post-area .post-footer div:last-child button {
+    background-color: #1d9bf0;
+    padding: 8px 30px;
+    border-radius: 50px;
+    border: 1px solid #1d9bf0;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+.post-sec .post-area .post-footer div:last-child button:hover {
+    background-color: transparent;
+    color: #1d9bf0;
+}

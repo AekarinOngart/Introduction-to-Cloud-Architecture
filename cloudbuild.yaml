@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/modular-magpie-348711/f-uck-book-fontend:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/modular-magpie-348711/f-uck-book-fontend:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta','run', 'deploy','f-uck-book-fontend','--region=asia-southeast1', '--platform=managed', '--image=gcr.io/modular-magpie-348711/f-uck-book-fontend:$SHORT_SHA']
