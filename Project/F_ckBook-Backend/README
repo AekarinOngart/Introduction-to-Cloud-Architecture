@@ -1,0 +1,5 @@
+flask db init      --> init migrate structure
+flask db migrate   --> create migrate script
+flask db upgrade   --> execute migrate script
+
+pip3 freeze > requirements.txt    --> create requirements text
