@@ -116,7 +116,7 @@ sklearn==0.0
 SQLAlchemy==1.4.19
 SQLAlchemy-i18n==1.1.0
 SQLAlchemy-Utils==0.38.2
-sqlparse==0.4.2
+sqlparse==0.4.4
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
