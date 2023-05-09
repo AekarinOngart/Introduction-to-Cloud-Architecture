@@ -24,7 +24,7 @@ cloud-sql-python-connector==0.6.1
 commonmark==0.9.1
 cryptography==37.0.1
 cycler==0.11.0
-Django==4.0.4
+Django==4.1.9
 django-model-utils==4.2.0
 doqu==0.28.2
 Flask==2.1.2
